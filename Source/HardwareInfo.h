@@ -6,14 +6,7 @@
 //  Copyright © 2017 Jeff Kelley. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import Foundation;
 
-//! Project version number for HardwareInfo.
 FOUNDATION_EXPORT double HardwareInfoVersionNumber;
-
-//! Project version string for HardwareInfo.
 FOUNDATION_EXPORT const unsigned char HardwareInfoVersionString[];
-
-// In this header, you should import all the public headers of your framework using statements like #import <HardwareInfo/PublicHeader.h>
-
-
