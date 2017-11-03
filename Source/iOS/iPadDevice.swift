@@ -95,12 +95,12 @@ public enum iPadDevice {
             }
             
         case "iPad6,3", "iPad6,4":
-            if #available(iOSApplicationExtension 9.3, *) {
+            if #available(iOS 9.3, *) {
                 self = .iPadPro9_7Inch
             }
             
         case "iPad6,7", "iPad6,8":
-            if #available(iOSApplicationExtension 9.1, *) {
+            if #available(iOS 9.1, *) {
                 self = .iPadPro12_9Inch
             }
             
