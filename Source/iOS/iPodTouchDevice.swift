@@ -8,24 +8,24 @@
 
 import Foundation
 
-public enum iPodTouchDevice: String {
+public enum iPodTouchDevice {
     @available(iOS, introduced: 1.1, deprecated: 3.2)
-    case iPodTouch = "iPod touch"
+    case iPodTouch
 
     @available(iOS, introduced: 2.1, deprecated: 4.3)
-    case iPodTouch2 = "iPod touch (2nd Generation)"
+    case iPodTouch2
 
     @available(iOS, introduced: 3.1, deprecated: 6.0)
-    case iPodTouch3 = "iPod touch (3rd Generation)"
+    case iPodTouch3
 
     @available(iOS, introduced: 4.1, deprecated: 7.0)
-    case iPodTouch4 = "iPod touch (4th Generation)"
+    case iPodTouch4
     
     @available(iOS, introduced: 6.0, deprecated: 10.0)
-    case iPodTouch5 = "iPod touch (5th Generation)"
+    case iPodTouch5
 
     @available(iOS, introduced: 8.4)
-    case iPodTouch6 = "iPod touch (6th Generation)"
+    case iPodTouch6
     
     case unknown
     
@@ -38,6 +38,19 @@ public enum iPodTouchDevice: String {
 //        case "iPod5,1": self = .iPodTouch5
         case "iPod7,1": self = .iPodTouch6
         default: self = .unknown
+        }
+    }
+    
+    public var marketingName: String? {
+        switch self {
+        case .iPodTouch6: return "iPod touch (6th Generation)"
+        case .iPodTouch5: return "iPod touch (5th generation)"
+        case .iPodTouch4: return "iPod touch (4th generation)"
+        case .iPodTouch3: return "iPod touch (3rd generation)"
+        case .iPodTouch2: return "iPod touch (2nd generation)"
+        case .iPodTouch: return "iPod touch"
+            
+        default: return nil
         }
     }
 }

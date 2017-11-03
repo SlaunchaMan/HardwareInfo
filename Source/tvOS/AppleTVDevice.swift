@@ -8,12 +8,12 @@
 
 import Foundation
 
-public enum AppleTVDevice: String {
+public enum AppleTVDevice {
     @available(tvOS, introduced: 9.0)
-    case AppleTV = "Apple TV"
+    case AppleTV
     
     @available(tvOS, introduced: 11.0)
-    case AppleTV4K = "Apple TV 4K"
+    case AppleTV4K
     
     case simulator
     case unknown
@@ -24,6 +24,15 @@ public enum AppleTVDevice: String {
         case "AppleTV6,2": self = .AppleTV4K
         case "i386", "x86_64": self = .simulator
         default: self = .unknown
+        }
+    }
+    
+    public var marketingName: String? {
+        switch self {
+        case .AppleTV4K: return "Apple TV 4K"
+        case .AppleTV: return "Apple TV"
+            
+        default: return nil
         }
     }
 }

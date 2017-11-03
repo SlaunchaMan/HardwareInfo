@@ -9,6 +9,10 @@
 import Foundation
 
 func modelName() -> String? {
+    if let simulatorModelIdentifier = ProcessInfo().environment["SIMULATOR_MODEL_IDENTIFIER"] {
+        return simulatorModelIdentifier
+    }
+    
     var name = utsname()
     guard uname(&name) == 0 else { return nil }
     

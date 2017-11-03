@@ -17,7 +17,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         if let label = label {
-            label.text = UIDevice.current.deviceIdentity.rawValue
+            label.text = UIDevice.current.deviceIdentity.marketingName
         }
     }
 

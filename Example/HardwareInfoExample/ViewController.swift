@@ -19,13 +19,13 @@ class ViewController: UIViewController {
         if let label = label {
             switch UIDevice.current.deviceIdentity {
             case .iPhone(let model):
-                label.text = model.rawValue
+                label.text = model.marketingName
 
             case .iPad(let model):
-                label.text = model.rawValue
+                label.text = model.marketingName
 
             case .iPodTouch(let model):
-                label.text = model.rawValue
+                label.text = model.marketingName
                 
             case .simulator:
                 label.text = "Simulator"

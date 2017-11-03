@@ -9,11 +9,6 @@
 import UIKit
 
 internal func parseDeviceIdentity(from modelString: String) -> AppleTVDevice {
-    if let simulatorModelIdentifier = ProcessInfo().environment["SIMULATOR_MODEL_IDENTIFIER"],
-        simulatorModelIdentifier != modelString {
-        return parseDeviceIdentity(from: simulatorModelIdentifier)
-    }
-    
     return AppleTVDevice(model: modelString)
 }
 

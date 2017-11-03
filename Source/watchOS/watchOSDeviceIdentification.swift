@@ -9,11 +9,6 @@
 import WatchKit
 
 internal func parseDeviceIdentity(from modelString: String) -> AppleWatchDevice {
-    if let simulatorModelIdentifier = ProcessInfo().environment["SIMULATOR_MODEL_IDENTIFIER"],
-        simulatorModelIdentifier != modelString {
-        return parseDeviceIdentity(from: simulatorModelIdentifier)
-    }
-    
     return AppleWatchDevice(model: modelString)
 }
 

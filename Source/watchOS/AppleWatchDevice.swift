@@ -8,18 +8,18 @@
 
 import Foundation
 
-public enum AppleWatchDevice: String {
+public enum AppleWatchDevice {
     @available(watchOS, introduced: 1.0)
-    case AppleWatch = "Apple Watch"
+    case AppleWatch
     
     @available(watchOS, introduced: 3.0)
-    case AppleWatchSeries1 = "Apple Watch Series 1"
+    case AppleWatchSeries1
     
     @available(watchOS, introduced: 3.0)
-    case AppleWatchSeries2 = "Apple Watch Series 2"
+    case AppleWatchSeries2
     
     @available(watchOS, introduced: 4.0)
-    case AppleWatchSeries3 = "Apple Watch Series 3"
+    case AppleWatchSeries3
     
     case simulator
     case unknown
@@ -32,6 +32,17 @@ public enum AppleWatchDevice: String {
         case "Watch3,1", "Watch3,2", "Watch3,3", "Watch3,4": self = .AppleWatchSeries3
         case "i386", "x86_64": self = .simulator
         default: self = .unknown
+        }
+    }
+    
+    public var marketingName: String? {
+        switch self {
+        case .AppleWatchSeries3: return "Apple Watch Series 3"
+        case .AppleWatchSeries2: return "Apple Watch Series 2"
+        case .AppleWatchSeries1: return "Apple Watch Series 1"
+        case .AppleWatch: return "Apple Watch"
+            
+        default: return nil
         }
     }
 }

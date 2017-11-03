@@ -17,7 +17,7 @@ class InterfaceController: WKInterfaceController {
         super.awake(withContext: context)
         
         if let label = label {
-            label.setText(WKInterfaceDevice.current().deviceIdentity.rawValue)
+            label.setText(WKInterfaceDevice.current().deviceIdentity.marketingName)
         }
     }
     

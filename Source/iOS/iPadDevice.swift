@@ -8,51 +8,51 @@
 
 import Foundation
 
-public enum iPadDevice: String {
+public enum iPadDevice {
     @available (iOS, introduced: 3.2, deprecated: 6.0)
-    case iPad = "iPad"
+    case iPad
     
     @available (iOS, introduced: 4.3, deprecated: 10.0)
-    case iPad2 = "iPad 2"
+    case iPad2
     
     @available (iOS, introduced: 5.1, deprecated: 10.0)
-    case iPad3 = "iPad (3rd Generation)"
+    case iPad3
     
     @available (iOS, introduced: 6.0, deprecated: 11.0)
-    case iPad4 = "iPad (4th Generation)"
+    case iPad4
     
     @available (iOS, introduced: 6.0, deprecated: 10.0)
-    case iPadMini = "iPad mini"
+    case iPadMini
     
     @available (iOS, introduced: 7.0)
-    case iPadAir = "iPad Air"
+    case iPadAir
     
     @available (iOS, introduced: 7.0)
-    case iPadMini2 = "iPad mini 2"
+    case iPadMini2
     
     @available (iOS, introduced: 8.0)
-    case iPadMini3 = "iPad mini 3"
+    case iPadMini3
     
     @available (iOS, introduced: 8.1)
-    case iPadAir2 = "iPad Air 2"
+    case iPadAir2
     
     @available (iOS, introduced: 9.0)
-    case iPadMini4 = "iPad mini 4"
+    case iPadMini4
     
     @available (iOS, introduced: 9.1)
-    case iPadPro12_9Inch = "iPad Pro (12.9-inch)"
+    case iPadPro12_9Inch
     
     @available (iOS, introduced: 9.3)
-    case iPadPro9_7Inch = "iPad Pro (9.7-inch)"
+    case iPadPro9_7Inch
 
     @available (iOS, introduced: 10.3)
-    case iPad5 = "iPad (5th Generation)"
+    case iPad5
     
     @available (iOS, introduced: 10.3)
-    case iPadPro12_9Inch2 = "iPad Pro (12.9-inch, 2nd Generation)"
+    case iPadPro12_9Inch2
     
     @available (iOS, introduced: 10.3)
-    case iPadPro10_5Inch = "iPad Pro (10.5-inch)"
+    case iPadPro10_5Inch
     
     case unknown
     
@@ -74,6 +74,27 @@ public enum iPadDevice: String {
         case "iPad7,1", "iPad7,2": self = .iPadPro12_9Inch2
         case "iPad7,3", "iPad7,4": self = .iPadPro10_5Inch
         default: self = .unknown
+        }
+    }
+    
+    public var marketingName: String? {
+        switch self {
+        case .iPadPro10_5Inch: return "iPad Pro (10.5-inch)"
+        case .iPadPro12_9Inch2: return "iPad Pro (12.9-inch, 2nd Generation)"
+        case .iPad5: return "iPad (5th Generation)"
+        case .iPadPro9_7Inch: return "iPad Pro (9.7-inch)"
+        case .iPadPro12_9Inch: return "iPad Pro (12.9-inch)"
+        case .iPadMini4: return "iPad mini 4"
+        case .iPadAir2: return "iPad Air 2"
+        case .iPadMini3: return "iPad mini 3"
+        case .iPadMini2: return "iPad mini 2"
+        case .iPadAir: return "iPad Air"
+        case .iPad4: return "iPad (4th Generation)"
+        case .iPad3: return "iPad (3rd Generation)"
+        case .iPad2: return "iPad 2"
+        case .iPad: return "iPad"
+            
+        default: return nil
         }
     }
 }

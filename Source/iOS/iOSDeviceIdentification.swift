@@ -49,11 +49,6 @@ internal func parseDeviceIdentity(from modelString: String) -> DeviceIdentity {
         return .iPodTouch(iPodTouchDevice(model: modelString))
     }
     else if modelString == "i386" || modelString == "x86_64" {
-        if let simulatorModelIdentifier = ProcessInfo().environment["SIMULATOR_MODEL_IDENTIFIER"],
-            simulatorModelIdentifier != modelString {
-            return parseDeviceIdentity(from: simulatorModelIdentifier)
-        }
-        
         return .simulator
     }
     
