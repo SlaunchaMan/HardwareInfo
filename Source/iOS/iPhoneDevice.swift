@@ -60,7 +60,7 @@ public enum iPhoneDevice {
     @available(iOS, introduced: 11.0)
     case iPhone8Plus
     
-    @available(iOS, introduced: 11.1)
+    @available(iOS, introduced: 11.0)
     case iPhoneX
     
     case unknown
@@ -86,7 +86,7 @@ public enum iPhoneDevice {
         case "iPhone10,2", "iPhone10,5": self = .iPhone8Plus
         
         case "iPhone10,3", "iPhone10,6":
-            if #available(iOS 11.1, *) {
+            if #available(iOS 11.0, *) {
                 self = .iPhoneX
             }
             else {

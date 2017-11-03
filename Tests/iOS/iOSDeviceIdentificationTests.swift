@@ -16,7 +16,7 @@ func assertDeviceIdentity(model: String, expected identity: DeviceIdentity) {
 class iPhoneIdentificationTests: XCTestCase {
     
     func testThatItParsesTheiPhoneX() {
-        if #available(iOS 11.1, *) {
+        if #available(iOS 11.0, *) {
             assertDeviceIdentity(model: "iPhone10,3", expected: .iPhone(.iPhoneX))
             assertDeviceIdentity(model: "iPhone10,6", expected: .iPhone(.iPhoneX))
         }
