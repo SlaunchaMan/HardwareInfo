@@ -49,7 +49,7 @@ public enum iPodTouchDevice {
             self = .iPodTouch5
             
         case "iPod7,1":
-            if #available(iOSApplicationExtension 8.4, *) {
+            if #available(iOS 8.4, *) {
                 self = .iPodTouch6
             }
             
