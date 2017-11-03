@@ -9,6 +9,10 @@
 import UIKit
 
 internal func parseDeviceIdentity(from modelString: String) -> AppleTVDevice {
+    if modelString == "i386" || modelString == "x86_64" {
+        return .simulator
+    }
+    
     return AppleTVDevice(model: modelString)
 }
 

@@ -19,11 +19,17 @@ public enum AppleTVDevice {
     case unknown
     
     internal init(model: String) {
+        self = .unknown
+        
         switch model {
         case "AppleTV5,3": self = .AppleTV
-        case "AppleTV6,2": self = .AppleTV4K
-        case "i386", "x86_64": self = .simulator
-        default: self = .unknown
+            
+        case "AppleTV6,2":
+            if #available(tvOSApplicationExtension 11.0, *) {
+                self = .AppleTV4K
+            }
+            
+        default: break
         }
     }
     

@@ -32,14 +32,18 @@ class iPhoneIdentificationTests: XCTestCase {
     }
     
     func testThatItParsesTheiPhone7() {
-        assertDeviceIdentity(model: "iPhone9,1", expected: .iPhone(.iPhone7))
-        assertDeviceIdentity(model: "iPhone9,3", expected: .iPhone(.iPhone7))
-        assertDeviceIdentity(model: "iPhone9,2", expected: .iPhone(.iPhone7Plus))
-        assertDeviceIdentity(model: "iPhone9,4", expected: .iPhone(.iPhone7Plus))
+        if #available(iOS 10.0, *) {
+            assertDeviceIdentity(model: "iPhone9,1", expected: .iPhone(.iPhone7))
+            assertDeviceIdentity(model: "iPhone9,3", expected: .iPhone(.iPhone7))
+            assertDeviceIdentity(model: "iPhone9,2", expected: .iPhone(.iPhone7Plus))
+            assertDeviceIdentity(model: "iPhone9,4", expected: .iPhone(.iPhone7Plus))
+        }
     }
     
     func testThatItParsesTheiPhoneSE() {
-        assertDeviceIdentity(model: "iPhone8,4", expected: .iPhone(.iPhoneSE))
+        if #available(iOS 9.3, *) {
+            assertDeviceIdentity(model: "iPhone8,4", expected: .iPhone(.iPhoneSE))
+        }
     }
     
     func testThatItParsesTheiPhone6s() {
@@ -82,10 +86,12 @@ class iPadIdentificationTests: XCTestCase {
     }
     
     func testThatItParsesTheiPadProFirstGeneration() {
-        assertDeviceIdentity(model: "iPad6,3", expected: .iPad(.iPadPro9_7Inch))
-        assertDeviceIdentity(model: "iPad6,4", expected: .iPad(.iPadPro9_7Inch))
-        assertDeviceIdentity(model: "iPad6,7", expected: .iPad(.iPadPro12_9Inch))
-        assertDeviceIdentity(model: "iPad6,8", expected: .iPad(.iPadPro12_9Inch))
+        if #available(iOS 9.3, *) {
+            assertDeviceIdentity(model: "iPad6,3", expected: .iPad(.iPadPro9_7Inch))
+            assertDeviceIdentity(model: "iPad6,4", expected: .iPad(.iPadPro9_7Inch))
+            assertDeviceIdentity(model: "iPad6,7", expected: .iPad(.iPadPro12_9Inch))
+            assertDeviceIdentity(model: "iPad6,8", expected: .iPad(.iPadPro12_9Inch))
+        }
     }
     
     func testThatItParsesTheiPadMiniFourthGeneration() {

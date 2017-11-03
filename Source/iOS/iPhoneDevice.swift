@@ -81,16 +81,29 @@ public enum iPhoneDevice {
         case "iPhone7,1": self = .iPhone6Plus
         case "iPhone8,1": self = .iPhone6s
         case "iPhone8,2": self = .iPhone6sPlus
-        case "iPhone8,4": self = .iPhoneSE
-        case "iPhone9,1", "iPhone9,3": self = .iPhone7
-        case "iPhone9,2", "iPhone9,4": self = .iPhone7Plus
+            
+        case "iPhone8,4":
+            if #available(iOS 9.3, *) {
+                self = .iPhoneSE
+            }
+            
+        case "iPhone9,1", "iPhone9,3":
+            if #available(iOS 10.0, *) {
+                self = .iPhone7
+            }
+            
+        case "iPhone9,2", "iPhone9,4":
+            if #available(iOS 10.0, *) {
+                self = .iPhone7Plus
+            }
+            
         case "iPhone10,1", "iPhone10,4":
-            if #available(iOSApplicationExtension 11.0, *) {
+            if #available(iOS 11.0, *) {
                 self = .iPhone8
             }
             
         case "iPhone10,2", "iPhone10,5":
-            if #available(iOSApplicationExtension 11.0, *) {
+            if #available(iOS 11.0, *) {
                 self = .iPhone8Plus
             }
         

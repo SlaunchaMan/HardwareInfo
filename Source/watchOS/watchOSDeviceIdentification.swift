@@ -9,6 +9,10 @@
 import WatchKit
 
 internal func parseDeviceIdentity(from modelString: String) -> AppleWatchDevice {
+    if modelString == "i386" || modelString == "x86_64" {
+        return .simulator
+    }
+    
     return AppleWatchDevice(model: modelString)
 }
 

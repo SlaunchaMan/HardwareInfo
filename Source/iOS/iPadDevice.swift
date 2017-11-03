@@ -70,8 +70,17 @@ public enum iPadDevice {
         case "iPad4,7", "iPad4,8", "iPad4,9": self = .iPadMini3
         case "iPad5,1", "iPad5,2": self = .iPadMini4
         case "iPad5,3", "iPad5,4": self = .iPadAir2
-        case "iPad6,3", "iPad6,4": self = .iPadPro9_7Inch
-        case "iPad6,7", "iPad6,8": self = .iPadPro12_9Inch
+            
+        case "iPad6,3", "iPad6,4":
+            if #available(iOSApplicationExtension 9.3, *) {
+                self = .iPadPro9_7Inch
+            }
+            
+        case "iPad6,7", "iPad6,8":
+            if #available(iOSApplicationExtension 9.1, *) {
+                self = .iPadPro12_9Inch
+            }
+            
         case "iPad6,11", "iPad6,12":
             if #available(iOS 10.3, *) {
                 self = .iPad5

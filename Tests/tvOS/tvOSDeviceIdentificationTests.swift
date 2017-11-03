@@ -12,7 +12,9 @@ import XCTest
 class tvOSDeviceIdentificationTests: XCTestCase {
 
     func testThatItParsesTheAppleTV4K() {
-        XCTAssertEqual(AppleTVDevice(model: "AppleTV6,2"), .AppleTV4K)
+        if #available(tvOS 11.0, *) {
+            XCTAssertEqual(AppleTVDevice(model: "AppleTV6,2"), .AppleTV4K)
+        }
     }
     
     func testThatItParsesTheAppleTV() {
