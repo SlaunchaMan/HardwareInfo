@@ -30,14 +30,21 @@ public enum iPodTouchDevice {
     case unknown
     
     internal init(model: String) {
+        self = .unknown
+        
         switch model {
 //        case "iPod1,1": self = .iPodTouch
 //        case "iPod2,1": self = .iPodTouch2
 //        case "iPod3,1": self = .iPodTouch3
 //        case "iPod4,1": self = .iPodTouch4
 //        case "iPod5,1": self = .iPodTouch5
-        case "iPod7,1": self = .iPodTouch6
-        default: self = .unknown
+            
+        case "iPod7,1":
+            if #available(iOSApplicationExtension 8.4, *) {
+                self = .iPodTouch6
+            }
+            
+        default: break
         }
     }
     

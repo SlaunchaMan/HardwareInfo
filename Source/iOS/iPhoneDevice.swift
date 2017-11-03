@@ -79,8 +79,16 @@ public enum iPhoneDevice {
         case "iPhone6,1", "iPhone6,2": self = .iPhone5s
         case "iPhone7,2": self = .iPhone6
         case "iPhone7,1": self = .iPhone6Plus
-        case "iPhone8,1": self = .iPhone6s
-        case "iPhone8,2": self = .iPhone6sPlus
+            
+        case "iPhone8,1":
+            if #available(iOS 9.0, *) {
+                self = .iPhone6s
+            }
+            
+        case "iPhone8,2":
+            if #available(iOS 9.0, *) {
+                self = .iPhone6sPlus
+            }
             
         case "iPhone8,4":
             if #available(iOS 9.3, *) {
