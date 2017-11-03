@@ -60,14 +60,29 @@ public enum iPadDevice {
         self = .unknown
         
         switch model {
-//        case "iPad1,1": self = .iPad
-//        case "iPad2,1", "iPad2,2", "iPad2,3", "iPad2,4": self = .iPad2
-//        case "iPad2,5", "iPad2,6", "iPad2,7": self = .iPadMini
-//        case "iPad3,1", "iPad3,2", "iPad3,3": self = .iPad3
-//        case "iPad3,4", "iPad3,5", "iPad3,6": self = .iPad4
-        case "iPad4,1", "iPad4,2", "iPad4,3": self = .iPadAir
-        case "iPad4,4", "iPad4,5", "iPad4,6": self = .iPadMini2
-        case "iPad4,7", "iPad4,8", "iPad4,9": self = .iPadMini3
+//        case "iPad1,1":
+//            self = .iPad
+        
+        case "iPad2,1", "iPad2,2", "iPad2,3", "iPad2,4":
+            self = .iPad2
+        
+        case "iPad2,5", "iPad2,6", "iPad2,7":
+            self = .iPadMini
+        
+        case "iPad3,1", "iPad3,2", "iPad3,3":
+            self = .iPad3
+        
+        case "iPad3,4", "iPad3,5", "iPad3,6":
+            self = .iPad4
+        
+        case "iPad4,1", "iPad4,2", "iPad4,3":
+            self = .iPadAir
+        
+        case "iPad4,4", "iPad4,5", "iPad4,6":
+            self = .iPadMini2
+            
+        case "iPad4,7", "iPad4,8", "iPad4,9":
+            self = .iPadMini3
             
         case "iPad5,1", "iPad5,2":
             if #available(iOS 9.0, *) {
@@ -122,6 +137,7 @@ public enum iPadDevice {
         case .iPadAir: return "iPad Air"
         case .iPad4: return "iPad (4th Generation)"
         case .iPad3: return "iPad (3rd Generation)"
+        case .iPadMini: return "iPad mini"
         case .iPad2: return "iPad 2"
         case .iPad: return "iPad"
             

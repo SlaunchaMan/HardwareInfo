@@ -4,9 +4,10 @@ Pod::Spec.new do |s|
   s.summary = "Identifying Apple hardware your code runs on."
 
   s.description = <<-DESC
+Identify the Apple hardware your code is running on. Includes availability information of all Apple devices.
                   DESC
 
-  # s.homepage    = "http://EXAMPLE/HardwareInfo"
+  s.homepage    = "https://github.com/SlaunchaMan/HardwareInfo"
   # s.screenshots = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
   s.license = "MIT"
@@ -18,7 +19,7 @@ Pod::Spec.new do |s|
   s.watchos.deployment_target = "2.0"
   s.tvos.deployment_target = "9.0"
 
-  s.source = { :git => "http://github.com/SlaunchaMan/HardwareInfo.git", :tag => "#{s.version}" }
+  s.source = { :git => "http://github.com/SlaunchaMan/HardwareInfo.git", :branch => "master" }
 
   s.source_files = "Source/*.swift"
 

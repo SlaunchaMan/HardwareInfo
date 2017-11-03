@@ -21,16 +21,32 @@ public enum AppleWatchDevice {
     @available(watchOS, introduced: 4.0)
     case AppleWatchSeries3
     
+    case simulator
     case unknown
     
     internal init(model: String) {
+        self = .unknown
+        
         switch model {
-        case "Watch1,1", "Watch1,2": self = .AppleWatch
-        case "Watch2,6", "Watch2,7": self = .AppleWatchSeries1
-        case "Watch2,3", "Watch2,4": self = .AppleWatchSeries2
-        case "Watch3,1", "Watch3,2", "Watch3,3", "Watch3,4": self = .AppleWatchSeries3
+        case "Watch1,1", "Watch1,2":
+            self = .AppleWatch
+            
+        case "Watch2,6", "Watch2,7":
+            if #available(watchOS 3.0, *) {
+                self = .AppleWatchSeries1
+            }
+            
+        case "Watch2,3", "Watch2,4":
+            if #available(watchOS 3.0, *) {
+                self = .AppleWatchSeries2
+            }
+            
+        case "Watch3,1", "Watch3,2", "Watch3,3", "Watch3,4":
+            if #available(watchOS 4.0, *) {
+                self = .AppleWatchSeries3
+            }
 
-        default: self = .unknown
+        default: break
         }
     }
     

@@ -69,16 +69,35 @@ public enum iPhoneDevice {
         self = .unknown
         
         switch model {
-//        case "iPhone1,1": self = .iPhone
-//        case "iPhone1,2": self = .iPhone3G
-//        case "iPhone2,1": self = .iPhone3GS
-//        case "iPhone3,1", "iPhone3,2", "iPhone3,3": self = .iPhone4
-//        case "iPhone4,1", "iPhone4,2", "iPhone4,3": self = .iPhone4S
-//        case "iPhone5,1", "iPhone5,2": self = .iPhone5
-//        case "iPhone5,3", "iPhone5,4": self = .iPhone5c
-        case "iPhone6,1", "iPhone6,2": self = .iPhone5s
-        case "iPhone7,2": self = .iPhone6
-        case "iPhone7,1": self = .iPhone6Plus
+//        case "iPhone1,1":
+//            self = .iPhone
+//
+//        case "iPhone1,2":
+//            self = .iPhone3G
+//
+//        case "iPhone2,1":
+//            self = .iPhone3GS
+//
+//        case "iPhone3,1", "iPhone3,2", "iPhone3,3":
+//            self = .iPhone4
+            
+        case "iPhone4,1", "iPhone4,2", "iPhone4,3":
+            self = .iPhone4S
+            
+        case "iPhone5,1", "iPhone5,2":
+            self = .iPhone5
+            
+        case "iPhone5,3", "iPhone5,4":
+            self = .iPhone5c
+            
+        case "iPhone6,1", "iPhone6,2":
+            self = .iPhone5s
+            
+        case "iPhone7,2":
+            self = .iPhone6
+            
+        case "iPhone7,1":
+            self = .iPhone6Plus
             
         case "iPhone8,1":
             if #available(iOS 9.0, *) {
