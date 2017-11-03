@@ -66,6 +66,8 @@ public enum iPhoneDevice {
     case unknown
     
     internal init(model: String) {
+        self = .unknown
+        
         switch model {
 //        case "iPhone1,1": self = .iPhone
 //        case "iPhone1,2": self = .iPhone3G
@@ -82,18 +84,22 @@ public enum iPhoneDevice {
         case "iPhone8,4": self = .iPhoneSE
         case "iPhone9,1", "iPhone9,3": self = .iPhone7
         case "iPhone9,2", "iPhone9,4": self = .iPhone7Plus
-        case "iPhone10,1", "iPhone10,4": self = .iPhone8
-        case "iPhone10,2", "iPhone10,5": self = .iPhone8Plus
+        case "iPhone10,1", "iPhone10,4":
+            if #available(iOSApplicationExtension 11.0, *) {
+                self = .iPhone8
+            }
+            
+        case "iPhone10,2", "iPhone10,5":
+            if #available(iOSApplicationExtension 11.0, *) {
+                self = .iPhone8Plus
+            }
         
         case "iPhone10,3", "iPhone10,6":
             if #available(iOS 11.0, *) {
                 self = .iPhoneX
             }
-            else {
-                self = .unknown
-            }
         
-        default: self = .unknown
+        default: break
         }
     }
     

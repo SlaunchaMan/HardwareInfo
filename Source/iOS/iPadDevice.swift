@@ -57,6 +57,8 @@ public enum iPadDevice {
     case unknown
     
     internal init(model: String) {
+        self = .unknown
+        
         switch model {
 //        case "iPad1,1": self = .iPad
 //        case "iPad2,1", "iPad2,2", "iPad2,3", "iPad2,4": self = .iPad2
@@ -70,10 +72,22 @@ public enum iPadDevice {
         case "iPad5,3", "iPad5,4": self = .iPadAir2
         case "iPad6,3", "iPad6,4": self = .iPadPro9_7Inch
         case "iPad6,7", "iPad6,8": self = .iPadPro12_9Inch
-        case "iPad6,11", "iPad6,12": self = .iPad5
-        case "iPad7,1", "iPad7,2": self = .iPadPro12_9Inch2
-        case "iPad7,3", "iPad7,4": self = .iPadPro10_5Inch
-        default: self = .unknown
+        case "iPad6,11", "iPad6,12":
+            if #available(iOS 10.3, *) {
+                self = .iPad5
+            }
+            
+        case "iPad7,1", "iPad7,2":
+            if #available(iOS 10.3, *) {
+                self = .iPadPro12_9Inch2
+            }
+            
+        case "iPad7,3", "iPad7,4":
+            if #available(iOS 10.3, *) {
+                self = .iPadPro10_5Inch
+            }
+            
+        default: break
         }
     }
     

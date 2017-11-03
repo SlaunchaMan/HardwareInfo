@@ -23,10 +23,12 @@ class iPhoneIdentificationTests: XCTestCase {
     }
     
     func testThatItParsesTheiPhone8() {
-        assertDeviceIdentity(model: "iPhone10,1", expected: .iPhone(.iPhone8))
-        assertDeviceIdentity(model: "iPhone10,4", expected: .iPhone(.iPhone8))
-        assertDeviceIdentity(model: "iPhone10,2", expected: .iPhone(.iPhone8Plus))
-        assertDeviceIdentity(model: "iPhone10,5", expected: .iPhone(.iPhone8Plus))
+        if #available(iOS 11.0, *) {
+            assertDeviceIdentity(model: "iPhone10,1", expected: .iPhone(.iPhone8))
+            assertDeviceIdentity(model: "iPhone10,4", expected: .iPhone(.iPhone8))
+            assertDeviceIdentity(model: "iPhone10,2", expected: .iPhone(.iPhone8Plus))
+            assertDeviceIdentity(model: "iPhone10,5", expected: .iPhone(.iPhone8Plus))
+        }
     }
     
     func testThatItParsesTheiPhone7() {
@@ -64,15 +66,19 @@ class iPhoneIdentificationTests: XCTestCase {
 class iPadIdentificationTests: XCTestCase {
     
     func testThatItParsesTheiPadProSecondGeneration() {
-        assertDeviceIdentity(model: "iPad7,1", expected: .iPad(.iPadPro12_9Inch2))
-        assertDeviceIdentity(model: "iPad7,2", expected: .iPad(.iPadPro12_9Inch2))
-        assertDeviceIdentity(model: "iPad7,3", expected: .iPad(.iPadPro10_5Inch))
-        assertDeviceIdentity(model: "iPad7,4", expected: .iPad(.iPadPro10_5Inch))
+        if #available(iOS 10.3, *) {
+            assertDeviceIdentity(model: "iPad7,1", expected: .iPad(.iPadPro12_9Inch2))
+            assertDeviceIdentity(model: "iPad7,2", expected: .iPad(.iPadPro12_9Inch2))
+            assertDeviceIdentity(model: "iPad7,3", expected: .iPad(.iPadPro10_5Inch))
+            assertDeviceIdentity(model: "iPad7,4", expected: .iPad(.iPadPro10_5Inch))
+        }
     }
     
     func testThatItParsesTheiPadFifthGeneration() {
-        assertDeviceIdentity(model: "iPad6,11", expected: .iPad(.iPad5))
-        assertDeviceIdentity(model: "iPad6,12", expected: .iPad(.iPad5))
+        if #available(iOS 10.3, *) {
+            assertDeviceIdentity(model: "iPad6,11", expected: .iPad(.iPad5))
+            assertDeviceIdentity(model: "iPad6,12", expected: .iPad(.iPad5))
+        }
     }
     
     func testThatItParsesTheiPadProFirstGeneration() {
