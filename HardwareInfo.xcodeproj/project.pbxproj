@@ -178,6 +178,7 @@
 		1F42E8AF1FACE8350026A7B0 /* HardwareInfoTests-tvOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "HardwareInfoTests-tvOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F42E8C01FACE8E10026A7B0 /* tvOSDeviceIdentificationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tvOSDeviceIdentificationTests.swift; sourceTree = "<group>"; };
 		1F42E8C31FACE9980026A7B0 /* AppleTVDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleTVDevice.swift; sourceTree = "<group>"; };
+		1F86C1931FAD109000C548B4 /* HardwareInfo.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HardwareInfo.podspec; sourceTree = "<group>"; };
 		1FAF4BF11FACFE9C002F3585 /* HardwareInfoWatchExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HardwareInfoWatchExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FAF4BF41FACFE9C002F3585 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		1FAF4BF61FACFE9C002F3585 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -378,6 +379,7 @@
 		1FF9D1561FABB8F90006CA72 = {
 			isa = PBXGroup;
 			children = (
+				1F86C1931FAD109000C548B4 /* HardwareInfo.podspec */,
 				1F1A0C411FACF8390083A833 /* Example */,
 				1FF9D1621FABB8F90006CA72 /* Source */,
 				1FF9D16D1FABB8F90006CA72 /* Tests */,
